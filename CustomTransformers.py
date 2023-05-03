@@ -31,7 +31,9 @@ class StringCleanTransformer(BaseEstimator, TransformerMixin):
         return self
     
     def transform(self, X, y=None):
-        StringToClean = ["BatchId","AccountId","SubscriptionId","CustomerId", "ProviderId", "ProductId", "ChannelId", "ProductCategory"]
+        # StringToClean = ["BatchId","AccountId","SubscriptionId","CustomerId", "ProviderId", "ProductId", "ChannelId", "ProductCategory"]
+        StringToClean = ["BatchId","AccountId","SubscriptionId","CustomerId", "ProviderId", "ProductId", "ChannelId"]
+
         for col in StringToClean:
             X[col] = X[col].apply(lambda x : x.split("_")[-1])
         return X
@@ -61,6 +63,14 @@ class SignTransformer(BaseEstimator, TransformerMixin):
     def transform(self, X, y=None):
         X["Sign"] = X["Amount"].apply(lambda x : x>=0)
         return X
+    
+
+class FloatTransformer(BaseEstimator, TransformerMixin):
+    def fit (self, X,y = None):
+        return self
+    
+    def transform(self, X, y=None):
+        return X.astype('float32')
 
 class OHTransformer(BaseEstimator, TransformerMixin):
     def __init__(self, columns=None):
@@ -77,6 +87,7 @@ class OHTransformer(BaseEstimator, TransformerMixin):
             OH_cols.index = X.index
             X = pd.concat([X, OH_cols], axis=1)
             X.drop(elem, axis=1, inplace=True)
+        print(X.columns.values)
         return X
 
 # class SmoteTransformer(BaseEstimator, TransformerMixin):

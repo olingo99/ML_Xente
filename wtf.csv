@@ -5257,7 +5257,7 @@ TransactionId_31431,0
 TransactionId_121197,0
 TransactionId_11374,1
 TransactionId_39833,1
-TransactionId_103156,0
+TransactionId_103156,1
 TransactionId_32536,0
 TransactionId_115439,0
 TransactionId_95976,0
@@ -5267,7 +5267,7 @@ TransactionId_77006,0
 TransactionId_76627,0
 TransactionId_130880,0
 TransactionId_1240,0
-TransactionId_59289,0
+TransactionId_59289,1
 TransactionId_90824,0
 TransactionId_6665,0
 TransactionId_88480,1
@@ -6903,7 +6903,7 @@ TransactionId_65147,0
 TransactionId_108950,0
 TransactionId_31027,0
 TransactionId_34022,0
-TransactionId_6285,0
+TransactionId_6285,1
 TransactionId_54777,0
 TransactionId_4259,0
 TransactionId_82185,0
@@ -13410,7 +13410,7 @@ TransactionId_62206,0
 TransactionId_25325,0
 TransactionId_40837,0
 TransactionId_9283,0
-TransactionId_66029,1
+TransactionId_66029,0
 TransactionId_32839,0
 TransactionId_137588,0
 TransactionId_71181,0
@@ -19673,10 +19673,10 @@ TransactionId_71146,0
 TransactionId_85581,0
 TransactionId_108018,0
 TransactionId_105101,0
-TransactionId_114219,1
+TransactionId_114219,0
 TransactionId_23338,0
 TransactionId_41279,0
-TransactionId_9176,1
+TransactionId_9176,0
 TransactionId_75829,0
 TransactionId_82008,0
 TransactionId_8435,0
@@ -19968,9 +19968,9 @@ TransactionId_138077,0
 TransactionId_87331,0
 TransactionId_79179,0
 TransactionId_73677,0
-TransactionId_133930,1
+TransactionId_133930,0
 TransactionId_85914,0
-TransactionId_13904,1
+TransactionId_13904,0
 TransactionId_46138,0
 TransactionId_70279,0
 TransactionId_119452,0
@@ -21946,14 +21946,14 @@ TransactionId_115866,0
 TransactionId_25989,0
 TransactionId_89708,0
 TransactionId_100373,0
-TransactionId_88604,1
+TransactionId_88604,0
 TransactionId_118836,0
 TransactionId_77156,0
 TransactionId_62317,0
 TransactionId_127075,0
 TransactionId_85646,0
 TransactionId_67716,0
-TransactionId_62470,0
+TransactionId_62470,1
 TransactionId_11260,0
 TransactionId_38464,0
 TransactionId_1402,0
@@ -21962,7 +21962,7 @@ TransactionId_112226,0
 TransactionId_108641,0
 TransactionId_77808,0
 TransactionId_134940,0
-TransactionId_37370,0
+TransactionId_37370,1
 TransactionId_72228,0
 TransactionId_78793,0
 TransactionId_86867,0
@@ -23052,7 +23052,7 @@ TransactionId_27013,0
 TransactionId_38590,0
 TransactionId_109598,0
 TransactionId_48447,0
-TransactionId_29526,1
+TransactionId_29526,0
 TransactionId_133583,0
 TransactionId_106059,0
 TransactionId_85542,0
@@ -26885,7 +26885,7 @@ TransactionId_91245,0
 TransactionId_140470,0
 TransactionId_134066,0
 TransactionId_112958,0
-TransactionId_30562,1
+TransactionId_30562,0
 TransactionId_95486,0
 TransactionId_70769,0
 TransactionId_41579,0
@@ -30849,7 +30849,7 @@ TransactionId_135381,0
 TransactionId_47953,1
 TransactionId_16194,0
 TransactionId_88971,0
-TransactionId_61406,1
+TransactionId_61406,0
 TransactionId_108325,0
 TransactionId_76482,1
 TransactionId_137241,0
@@ -40202,7 +40202,7 @@ TransactionId_58992,0
 TransactionId_43130,0
 TransactionId_137855,0
 TransactionId_15643,0
-TransactionId_81527,1
+TransactionId_81527,0
 TransactionId_12744,0
 TransactionId_86547,0
 TransactionId_64380,1
