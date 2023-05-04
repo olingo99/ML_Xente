@@ -77,6 +77,7 @@ class FloatTransformer(BaseEstimator, TransformerMixin):
         return self
     
     def transform(self, X, y=None):
+        print(X.columns.values)
         return X.astype('float32')
 
 class OHTransformer(BaseEstimator, TransformerMixin):
@@ -118,6 +119,20 @@ class weekdayTransformer(BaseEstimator, TransformerMixin):
     def transform(self, X, y=None):
         X["TransactionStartDay"] = X["TransactionStartDay"].apply(lambda x : x%7).astype('str')
         return X
+
+
+class TotalTransformer(BaseEstimator, TransformerMixin):
+    def fit (self, X,y = None):
+        return self
+    
+    def transform(self, X, y=None):
+        # X =X.sort_values(by=['CustomerId', "TransactionStartTime"])
+        X['total'] = 0
+        # df['total'] = df.total.apply(lambda x: 10 )
+        for id in X.CustomerId.unique():
+            X.loc[X.CustomerId == id, 'total'] = X.loc[X.CustomerId == id, 'Amount'].cumsum()
+        return X
+
 
 # class SmoteTransformer(BaseEstimator, TransformerMixin):
 #     def __init__(self, Y=None):
