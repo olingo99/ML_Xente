@@ -31,8 +31,8 @@ class StringCleanTransformer(BaseEstimator, TransformerMixin):
         return self
     
     def transform(self, X, y=None):
-        # StringToClean = ["BatchId","AccountId","SubscriptionId","CustomerId", "ProviderId", "ProductId", "ChannelId", "ProductCategory"]
-        StringToClean = ["BatchId","AccountId","SubscriptionId","CustomerId", "ProviderId", "ProductId", "ChannelId"]
+        StringToClean = ["BatchId","AccountId","SubscriptionId","CustomerId", "ProviderId", "ProductId", "ChannelId", "ProductCategory"]
+        # StringToClean = ["BatchId","AccountId","SubscriptionId","CustomerId", "ProviderId", "ProductId", "ChannelId"]
 
         for col in StringToClean:
             X[col] = X[col].apply(lambda x : x.split("_")[-1])
@@ -46,14 +46,21 @@ class DayTimeTransformer(BaseEstimator, TransformerMixin):
     def transform(self, X, y=None):
         X["TransactionStartDay"]  = X["TransactionStartTime"].apply(getDay)
         X["TransactionStartTime"] = X["TransactionStartTime"].apply(getTime)
+        X = X.set_index("TransactionId")
         return X
 
 class DropperTransformer(BaseEstimator, TransformerMixin):
+    def __init__(self, columns=None):
+        self.columns = columns
+
     def fit (self, X,y = None):
         return self
     
+    # def transform(self, X, y=None):
+    #     X.drop(['CurrencyCode', 'CountryCode', 'BatchId', 'CustomerId', 'SubscriptionId', 'ProductId', 'Amount'], axis=1, inplace=True)
+    #     return X
     def transform(self, X, y=None):
-        X.drop(['CurrencyCode', 'CountryCode', 'BatchId', 'CustomerId', 'SubscriptionId', 'ProductId', 'Amount'], axis=1, inplace=True)
+        X.drop(self.columns, axis=1, inplace=True)
         return X
 
 class SignTransformer(BaseEstimator, TransformerMixin):
@@ -88,6 +95,28 @@ class OHTransformer(BaseEstimator, TransformerMixin):
             X = pd.concat([X, OH_cols], axis=1)
             X.drop(elem, axis=1, inplace=True)
         print(X.columns.values)
+        return X
+    
+
+
+class biningTransformer(BaseEstimator, TransformerMixin):
+    def __init__(self, columns=None):
+        self.columns = columns
+    
+    def fit (self, X,y = None):
+        return self
+    
+    def transform(self, X, y=None):
+        for col in self.columns:
+            X[col] = pd.qcut(X[col], 5, labels=False, duplicates='drop')
+        return X
+    
+class weekdayTransformer(BaseEstimator, TransformerMixin):
+    def fit (self, X,y = None):
+        return self
+    
+    def transform(self, X, y=None):
+        X["TransactionStartDay"] = X["TransactionStartDay"].apply(lambda x : x%7).astype('str')
         return X
 
 # class SmoteTransformer(BaseEstimator, TransformerMixin):
