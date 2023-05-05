@@ -17632,8 +17632,8 @@ TransactionId_30524,0
 TransactionId_32500,0
 TransactionId_52013,1
 TransactionId_25972,1
-TransactionId_87268,1
-TransactionId_59595,1
+TransactionId_87268,0
+TransactionId_59595,0
 TransactionId_89450,0
 TransactionId_1262,0
 TransactionId_15346,0
@@ -26885,7 +26885,7 @@ TransactionId_91245,0
 TransactionId_140470,0
 TransactionId_134066,0
 TransactionId_112958,0
-TransactionId_30562,0
+TransactionId_30562,1
 TransactionId_95486,0
 TransactionId_70769,0
 TransactionId_41579,0
@@ -30846,7 +30846,7 @@ TransactionId_67259,0
 TransactionId_24282,0
 TransactionId_17276,0
 TransactionId_135381,0
-TransactionId_47953,1
+TransactionId_47953,0
 TransactionId_16194,0
 TransactionId_88971,0
 TransactionId_61406,0
