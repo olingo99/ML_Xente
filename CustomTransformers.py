@@ -36,6 +36,7 @@ class StringCleanTransformer(BaseEstimator, TransformerMixin):
 
         for col in StringToClean:
             X[col] = X[col].apply(lambda x : x.split("_")[-1])
+        X = X.set_index("TransactionId")
         return X
 
 
@@ -46,7 +47,7 @@ class DayTimeTransformer(BaseEstimator, TransformerMixin):
     def transform(self, X, y=None):
         X["TransactionStartDay"]  = X["TransactionStartTime"].apply(getDay)
         X["TransactionStartTime"] = X["TransactionStartTime"].apply(getTime)
-        X = X.set_index("TransactionId")
+        # X = X.set_index("TransactionId")
         return X
 
 class DropperTransformer(BaseEstimator, TransformerMixin):
